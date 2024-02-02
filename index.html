@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Agenda</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden; /* Remover a barra de rolagem horizontal */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            box-sizing: border-box;
+            height: 20px;
+            width: 100px; /* Defina a largura desejada */
+            border: 1px solid #020202; /* Adicione uma borda para um visual mais definido */
+            border-radius: 4px; /* Adicione bordas arredondadas */
+        }
+
+        /* Pintar a tabela */
+        .table-container {
+            display: grid;
+            gap: 2px;
+            grid-template-columns: 1fr 1fr;
+            margin: 10px 0; /* Adiciona margem entre as tabelas */
+        }
+        table {
+            border-collapse: collapse;
+            width: 95%; /* Ajuste para manter margens e bordas visíveis */
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow: auto;
+            margin-top: 10px; /* Adiciona espaçamento entre as tabelas */
+        }
+
+        /* Pintar as linhas da tabela */
+        th, td {
+            border: 2px solid #000000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        /* Pintar o cabeçalho da tabela */
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #000000;
+            color: white;
+            padding: 10px;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 20px; /* Defina o tamanho da fonte desejado */
+        }
+
+        h2 {
+            margin-top: 20px; /* Adiciona um espaçamento entre os títulos */
+        }
+
+        /* Adiciona estilo aos títulos das tabelas */
+        .table-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        /* Ajusta as dimensões das células das tabelas */
+        td {
+            max-width: 200px; /* Ajuste conforme necessário */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Agenda de todos os técnicos</h1>
+        <input type="text" id="searchInput" placeholder="Buscar por técnico..." height="20px" oninput="searchTable()">
+    </header>
+
+    <!-- TABELAS -->
+    <div class="table-container">
+        <!-- Tabela 1 -->
+        <style></style>
+        <div>
+            <h2 class="table-title">Motoboys Vales</h2>
+            <table>
+                <!-- Dados da Tabela 1 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Gabriel-->
+                    <tr>
+                        <td>Gabriel PAR/IGR/TAQ</td>
+                        <td>09:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Dionatan -->
+                    <tr>
+                        <td>Dionatan SAP/ARA</td>
+                        <td>11:00 (Folga nas Quartas)</td>
+                        <td>21:30</td>
+                    </tr>
+                    <!--Adan-->
+                    <tr>
+                        <td>Adan CBO/SAP</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Claiton -->
+                    <tr>
+                        <td>Claiton CBO/SAP/ARA</td>
+                        <td>09:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Filipe Winck -->
+                    <tr>
+                        <td>Filipe CBO/SAP</td>
+                        <td>09:00 </td>
+                        <td>19:00 </td>
+                    </tr>    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabela 2 -->
+        <div>
+            <h2 class="table-title">Motoboys Litoral</h2>
+            <table>
+                <!-- Dados da Tabela 2 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Carlos OSO/TRA/IMB-->
+                    <tr>
+                        <td>Carlos OSO/TRA/IMB</td>
+                        <td>09:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Jairo OSO/TRA/IMB -->
+                    <tr>
+                        <td>Jairo OSO/TRA/IMB</td>
+                        <td>ATESTADO (Folga nas Terças)</td>
+                        <td>ATESTADO</td>
+                    </tr>
+                    <!--Vitor CID-->
+                    <tr>
+                        <td>Vitor CID</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- João ceci MAG/QUI -->
+                    <tr>
+                        <td>João ceci MAG/QUI/PAL</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Rhian TUNEL/PINHAL -->
+                    <tr>
+                        <td>Rhian TUNEL/PINHAL</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <!-- Tabela 3 -->
+        <div>
+            <h2 class="table-title">Infra Vales</h2>
+            <table>
+                <!-- Dados da Tabela 3 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Carlos OSO/TRA/IMB-->
+                    <tr>
+                        <td>Alexandre CBO/SAP/ARA</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Jairo OSO/TRA/IMB -->
+                    <tr>
+                        <td>Paulo CBO/SAP/ARA</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Vitor CID-->
+                    <tr>
+                        <td>Alessandro NH/PAR/TAQ</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- João ceci MAG/QUI -->
+                    <tr>
+                        <td>Fabricio IGR/3C</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Tabela 4 -->
+        <div>
+            <h2 class="table-title">Infra Litoral</h2>
+            <table>
+                <!-- Dados da Tabela 4 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Carlos OSO/TRA/IMB-->
+                    <tr>
+                        <td>Leno OSO/TRA/IMB</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Jairo OSO/TRA/IMB -->
+                    <tr>
+                        <td>João Couto OSO/TRA/IMB</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Vitor CID-->
+                    <tr>
+                        <td>Jordi CID/PAL/QUI</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- João ceci MAG/QUI -->
+                    <tr>
+                        <td>Cassiano MAG/QUI/PAL</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2 class="table-title">Inst Sinos</h2>
+            <table>
+                <!-- Dados da Tabela 1 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Taichã -->
+                    <tr>
+                        <td>Taichã SAP/ARA</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Gustavo-->
+                    <tr>
+                        <td>Gustavo Ma. SAP</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Neimar -->
+                    <tr>
+                        <td>Neimar CBO/SAP</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2 class="table-title">Inst Paranhana</h2>
+            <table>
+                <!-- Dados da Tabela 1 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Gabriel-->
+                    <tr>
+                        <td>Nilmar PAR/IGR/TAQ</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Dionatan -->
+                    <tr>
+                        <td>Eder F. PAR/TAQ/NH</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Adan-->
+                    <tr>
+                        <td>Marcos F. PAR/TAQ</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Claiton -->
+                    <tr>
+                        <td>Eder IGR/3C</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2 class="table-title">Inst Sinos</h2>
+            <table>
+                <!-- Dados da Tabela 1 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Taichã -->
+                    <tr>
+                        <td>Taichã SAP/ARA</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Gustavo-->
+                    <tr>
+                        <td>Gustavo Ma. SAP</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Neimar -->
+                    <tr>
+                        <td>Neimar CBO/SAP</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <h2 class="table-title">Inst Paranhana</h2>
+            <table>
+                <!-- Dados da Tabela 1 -->
+                <thead>
+                    <tr>
+                        <th>Técnico</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Saida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--Gabriel-->
+                    <tr>
+                        <td>Nilmar PAR/IGR/TAQ</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Dionatan -->
+                    <tr>
+                        <td>Eder F. PAR/TAQ/NH</td>
+                        <td>08:00</td>
+                        <td>18:00</td>
+                    </tr>
+                    <!--Adan-->
+                    <tr>
+                        <td>Marcos F. PAR/TAQ</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr>
+                    <!-- Claiton -->
+                    <tr>
+                        <td>Eder IGR/3C</td>
+                        <td>08:00 </td>
+                        <td>18:00 </td>
+                    </tr> 
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </div>
+
+    <footer>
+        &copy; 2024 by Otávio Bernardes
+    </footer>
+
+    <script>
+        function searchTable() {
+            var input, filter, tables, tr, td, i, j, txtValue;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            tables = document.querySelectorAll("table");
+
+            for (i = 0; i < tables.length; i++) {
+                tr = tables[i].getElementsByTagName("td");
+
+                for (j = 0; j < tr.length; j++) {
+                    td = tr[j].getElementsByTagName("td")[2]; // Índice 2 representa a terceira coluna (Hora de Saida)
+
+                    if (td) {
+                        txtValue = td.textContent || td.innerText;
+                        var displayStyle = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
+                        tr[j].style.display = displayStyle;
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
